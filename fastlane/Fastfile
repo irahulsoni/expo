@@ -163,6 +163,7 @@ platform :android do
       build_type: "Debug"
     )
     result_info = upload_result.match(/View the INSTRUMENTATION run.*\/projects\/(?<project_id>.*)\/runs\/(?<run_id>.*)$/)
+    UI.shell_error!("Apks not uploaded!") unless result_info
     devicefarm_follow_run("arn:aws:devicefarm:us-west-2:274251141632:run:#{result_info[:project_id]}/#{result_info[:run_id]}")
   end
 
