@@ -145,8 +145,8 @@ platform :android do
       UI.message("Run pending...")
       sleep 60
     end
-    UI.shell_error!(run) unless run["result"] == "PASSED"
-    UI.success(run)
+    UI.shell_error!("Run #{run["result"]}") unless run["result"] == "PASSED"
+    UI.success("Run successful")
   end
 
   lane :devicefarm do |channel: git_branch|
