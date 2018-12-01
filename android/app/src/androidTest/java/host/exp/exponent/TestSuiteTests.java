@@ -97,7 +97,7 @@ public class TestSuiteTests extends BaseTestClass {
 
     if (shouldAddDeepLink) {
       String deepLink = TestConfig.get().toString();
-      testSuiteUri = testSuiteUri.withAppendedPath("/--/" + deepLink);
+      testSuiteUri = Uri.withAppendedPath(testSuiteUri, "/--/" + deepLink);
     }
 
     // Launch the app
