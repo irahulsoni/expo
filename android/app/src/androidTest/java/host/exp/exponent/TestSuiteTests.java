@@ -100,8 +100,7 @@ public class TestSuiteTests extends BaseTestClass {
 
     // Launch the app
     Context context = InstrumentationRegistry.getContext();
-    Intent intent = context.getPackageManager().getLaunchIntentForPackage("host.exp.exponent");
-    intent.setData(Uri.parse(testSuiteUri));
+    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(testSuiteUri));
     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     context.startActivity(intent);
 
