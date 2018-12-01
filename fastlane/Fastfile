@@ -150,7 +150,7 @@ platform :android do
   end
 
   lane :devicefarm do |channel: git_branch|
-    ENV["TEST_SUITE_URI"] = "https://exp.host/@exponent_ci_bot/test-suite?release-channel=#{channel}"
+    ENV["TEST_SUITE_URI"] = "exp://exp.host/@exponent_ci_bot/test-suite?release-channel=#{channel}"
     ENV["TEST_CONFIG"] = {
       includeModules:  '.*',
       includeSdkVersions: ['UNVERSIONED'],
